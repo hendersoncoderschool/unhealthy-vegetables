@@ -172,6 +172,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Restart" type="Button" parent="Game_Over"]
+process_mode = 3
+layout_mode = 0
 offset_left = -175.315
 offset_top = 4.06981
 offset_right = -107.315
@@ -197,4 +199,4 @@ text = "GAME OVER: YOU DIED"
 [connection signal="button_down" from="Upgrades UI/Speed Boost Upgrade Button" to="PlayerBody" method="on_speed_boost_down"]
 [connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="PlayerBody" method="on_cooldown_down"]
 [connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="HotdogBody" method="_on_cooldown_upgrade_button_button_down"]
-[connection signal="button_down" from="Game_Over/Restart" to="PlayerBody" method="restart_button_press"]
+[connection signal="button_down" from="Game_Over/Restart" to="Spawner" method="_on_restart_button_down"]

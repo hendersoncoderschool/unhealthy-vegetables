@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1779150458
+::res://::1779152106
 fireball.gd::GDScript::-1::1776125733::0::1::::<>CharacterBody2D<>::
 ::res://misc/::1777940698
 pixelart.ttf::FontFile::3264298408775386035::1777940696::1777940698::1::::<><>::
-::res://scenes/::1779149632
-brocolli_body.tscn::PackedScene::7799134227665688397::1779149088::0::1::::<><>::res://scripts/meleeveggies.gd<>uid://dxby0i2dp48bi::::res://sprites/brocolli.png
-broc_exp.gd::GDScript::-1::1777939436::0::1::::<>Area2D<>::
-carrot.tscn::PackedScene::7950401359059763393::1779149088::0::1::::<><>::res://scripts/meleeveggies.gd<>uid://d0aq3mhio068l::::res://sprites/Jayden's Carrot.png
-carrot_exp.gd::GDScript::-1::1777338019::0::1::::<>Area2D<>::
+::res://scenes/::1779152081
+brocolli_body.tscn::PackedScene::7799134227665688397::1779152043::0::1::::<><>::res://scripts/meleeveggies.gd<>uid://dxby0i2dp48bi::::res://sprites/brocolli.png
+broc_exp.gd::GDScript::-1::1779150757::0::1::::<>Area2D<>::
+carrot.tscn::PackedScene::7950401359059763393::1779152043::0::1::::<><>::res://scripts/meleeveggies.gd<>uid://d0aq3mhio068l::::res://sprites/Jayden's Carrot.png
+carrot_exp.gd::GDScript::-1::1779150757::0::1::::<>Area2D<>::
 cooldown_bar.tscn::PackedScene::7555053917506923687::1777336018::0::1::::<><>::uid://d5m4dit0anlj::::res://sprites/cooldown bar.png<>res://scripts/hotdog_cooldown.gd
 corn.tscn::PackedScene::4236787003884886476::1776731208::0::1::::<><>::uid://bqn61b6fk4mhs::::res://sprites/corn.png<>res://scripts/cornshooter.gd
-corn_exp.gd::GDScript::-1::1778546603::0::1::::<>Area2D<>::
-exp_broc.tscn::PackedScene::7189419308514663052::1779149088::0::1::::<><>::res://scenes/broc_exp.gd<>uid://b6toah1owyqds::::res://sprites/exp_broc.png
-exp_carrot.tscn::PackedScene::6142578687521341855::1779149088::0::1::::<><>::res://scenes/carrot_exp.gd<>uid://hrfkrie5tu7d::::res://sprites/exp_carrot.png
-exp_corn.tscn::PackedScene::6209238758828990523::1779149088::0::1::::<><>::res://scenes/corn_exp.gd<>uid://ebdpa3r20u56::::res://sprites/exp_corn.png
+corn_exp.gd::GDScript::-1::1779150757::0::1::::<>Area2D<>::
+exp_broc.tscn::PackedScene::7189419308514663052::1779152043::0::1::::<><>::res://scenes/broc_exp.gd<>uid://b6toah1owyqds::::res://sprites/exp_broc.png
+exp_carrot.tscn::PackedScene::6142578687521341855::1779152043::0::1::::<><>::res://scenes/carrot_exp.gd<>uid://hrfkrie5tu7d::::res://sprites/exp_carrot.png
+exp_corn.tscn::PackedScene::6209238758828990523::1779152043::0::1::::<><>::res://scenes/corn_exp.gd<>uid://ebdpa3r20u56::::res://sprites/exp_corn.png
 fireball.tscn::PackedScene::8040025734569080140::1777336025::0::1::::<><>::uid://dp86hfkar46mp::::res://sprites/fireball.png<>res://fireball.gd
 health_ui.tscn::PackedScene::749273428108607432::1776731208::0::1::::<><>::uid://bobt5u45dx2ph::::res://sprites/heart_16x16.png
 hotdog_size_upgrade_button.gd::GDScript::-1::1777941440::0::1::::<>Button<>::
@@ -22,19 +22,19 @@ pepper_boss.tscn::PackedScene::6799343292430986975::1777336011::0::1::::<><>::re
 player_body.tscn::PackedScene::8047069929373288158::1776731208::0::1::::<><>::res://scripts/playercontrols.gd<>uid://lk63evn03cp7::::res://sprites/player.png
 special_fireball.tscn::PackedScene::7798289051194318798::1777336014::0::1::::<><>::res://scripts/special_fireball.gd<>uid://dp86hfkar46mp::::res://sprites/fireball.png
 speed_boost_upgrade_button.gd::GDScript::-1::1778546309::0::1::::<>Button<>::
-titlescreen.tscn::PackedScene::7132330241769766977::1779149088::0::1::::<><>::res://scripts/startbutton.gd<>uid://djd7upb85txtt::::res://scenes/brocolli_body.tscn<>uid://dljh7i3imkf58::::res://scenes/carrot.tscn
-Unhealthy Vegetables.tscn::PackedScene::1880286764179213581::1779149632::0::1::::<><>::uid://dmwccil3rjwdi::::res://scenes/player_body.tscn<>uid://bklubfcguc52r::::res://sprites/hotdog.png<>res://scripts/hotdog.gd<>uid://kw7ooaupc8yu::::res://scenes/health_ui.tscn<>res://scripts/health_ui.gd<>uid://bueuupqfrhdqt::::res://sprites/grass.png<>uid://bmriruwp0spst::::res://misc/pixelart.ttf<>res://scripts/enemyspawner.gd<>res://scenes/speed_boost_upgrade_button.gd
-::res://scripts/::1778547786
+titlescreen.tscn::PackedScene::7132330241769766977::1779152043::0::1::::<><>::res://scripts/startbutton.gd<>uid://djd7upb85txtt::::res://scenes/brocolli_body.tscn<>uid://dljh7i3imkf58::::res://scenes/carrot.tscn
+Unhealthy Vegetables.tscn::PackedScene::1880286764179213581::1779152081::0::1::::<><>::uid://dmwccil3rjwdi::::res://scenes/player_body.tscn<>uid://bklubfcguc52r::::res://sprites/hotdog.png<>res://scripts/hotdog.gd<>uid://kw7ooaupc8yu::::res://scenes/health_ui.tscn<>res://scripts/health_ui.gd<>uid://bueuupqfrhdqt::::res://sprites/grass.png<>uid://bmriruwp0spst::::res://misc/pixelart.ttf<>res://scripts/enemyspawner.gd<>res://scenes/speed_boost_upgrade_button.gd
+::res://scripts/::1779152081
 cornshooter.gd::GDScript::-1::1777942508::0::1::::<>CharacterBody2D<>::
 enemyspawner.gd::GDScript::-1::1778545282::0::1::::<>Node<>::
 health.gd::GDScript::-1::1765936723::0::1::::<>Sprite2D<>::
 health_ui.gd::GDScript::-1::1768353483::0::1::::<>Control<>::
-hotdog.gd::GDScript::-1::1778547786::0::1::::<>CharacterBody2D<>::
+hotdog.gd::GDScript::-1::1779152081::0::1::::<>CharacterBody2D<>::
 hotdog_cooldown.gd::GDScript::-1::1778546538::0::1::::<>Sprite2D<>::
 kernel.gd::GDScript::-1::1776730196::0::1::::<>CharacterBody2D<>::
 meleeveggies.gd::GDScript::-1::1777335887::0::1::::<>CharacterBody2D<>::
 pepper_boss.gd::GDScript::-1::1776127812::0::1::::<>CharacterBody2D<>::
-playercontrols.gd::GDScript::-1::1778547101::0::1::::<>CharacterBody2D<>::
+playercontrols.gd::GDScript::-1::1779152081::0::1::::<>CharacterBody2D<>::
 special_fireball.gd::GDScript::-1::1776127170::0::1::::<>CharacterBody2D<>::
 startbutton.gd::GDScript::-1::1764812270::0::1::::<>Control<>::
 ::res://sprites/::1776731340

@@ -53,4 +53,5 @@ func on_speed_boost_down() -> void:
 
 
 func restart_button_press() -> void:
+	print("hello")
 	get_tree().reload_current_scene()

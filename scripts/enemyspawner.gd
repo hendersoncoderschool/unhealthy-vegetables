@@ -110,3 +110,8 @@ func _process(float):
 						enemy.global_position.y = randomY
 						if enemyType == 2:
 							enemy.global_position.x += 50
+
+
+func _on_restart_button_down() -> void:
+	get_tree().reload_current_scene()
+	
