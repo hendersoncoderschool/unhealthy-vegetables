@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfvyvtffgx2f0"]
+
+[ext_resource type="Texture2D" uid="uid://d5m4dit0anlj" path="res://sprites/cooldown bar.png" id="1_v50q7"]
+[ext_resource type="Script" path="res://scripts/hotdog_cooldown.gd" id="2_ddrmc"]
+
+[node name="Cooldown Bar" type="Sprite2D"]
+scale = Vector2(0.0786728, 0.0232465)
+texture = ExtResource("1_v50q7")
+script = ExtResource("2_ddrmc")

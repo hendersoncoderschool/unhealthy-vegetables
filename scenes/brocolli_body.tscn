@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://djd7upb85txtt"]
+
+[ext_resource type="Script" path="res://scripts/meleeveggies.gd" id="1_gp2xv"]
+[ext_resource type="Texture2D" uid="uid://dxby0i2dp48bi" path="res://sprites/brocolli.png" id="2_25tnm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g1r88"]
+radius = 1.39616
+height = 9.27087
+
+[node name="BrocolliBody" type="CharacterBody2D" groups=["enemy"]]
+position = Vector2(128, 246)
+scale = Vector2(17.7131, 6)
+motion_mode = 1
+script = ExtResource("1_gp2xv")
+speed = 70
+health = 2
+veggie_type = "brocolli"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.062494, 0)
+scale = Vector2(0.120345, 0.363471)
+texture = ExtResource("2_25tnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.169366, 0.5)
+scale = Vector2(1.3344, 1.47415)
+shape = SubResource("CapsuleShape2D_g1r88")

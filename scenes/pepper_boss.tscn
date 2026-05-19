@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c34wgqmrsdum6"]
+
+[ext_resource type="Script" path="res://scripts/pepper_boss.gd" id="1_yei5p"]
+[ext_resource type="Texture2D" uid="uid://meeqbm2nmny6" path="res://sprites/pepperboss.png" id="2_g7mfg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6khx0"]
+radius = 10.5688
+height = 31.8631
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sun66"]
+size = Vector2(16.4318, 5.82836)
+
+[node name="Pepper Boss" type="CharacterBody2D" groups=["boss"]]
+position = Vector2(-380, 55)
+scale = Vector2(3.38433, 3.63103)
+motion_mode = 1
+script = ExtResource("1_yei5p")
+
+[node name="Pepper Sprite" type="Sprite2D" parent="."]
+position = Vector2(-2.02425, 0.852784)
+texture = ExtResource("2_g7mfg")
+
+[node name="Body Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.886432, -0.550809)
+rotation = -0.0957747
+scale = Vector2(1.02868, 0.895764)
+shape = SubResource("CapsuleShape2D_6khx0")
+
+[node name="Tail Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-5.64484, 14.7512)
+shape = SubResource("RectangleShape2D_sun66")
+
+[node name="Fireball_Top" type="Node2D" parent="." groups=["shooting"]]
+position = Vector2(44.6174, -14.8718)
+
+[node name="Fireball_Bottom" type="Node2D" parent="." groups=["shooting"]]
+position = Vector2(47.5722, 18.7275)

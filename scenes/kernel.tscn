@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://4tt1djtpesxg"]
+
+[ext_resource type="Texture2D" uid="uid://ctkoyw2g86cph" path="res://sprites/kernel.png" id="1_esqpt"]
+[ext_resource type="Script" path="res://scripts/kernel.gd" id="1_hru0w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kjnx"]
+radius = 4.0
+height = 8.0
+
+[node name="Kernel(projectile)" type="CharacterBody2D" groups=["kernel"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_hru0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_esqpt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8kjnx")

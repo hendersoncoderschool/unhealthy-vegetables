@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://113bv3djge74"]
+
+[ext_resource type="PackedScene" uid="uid://dmwccil3rjwdi" path="res://scenes/player_body.tscn" id="1_hhsmg"]
+[ext_resource type="Texture2D" uid="uid://bklubfcguc52r" path="res://sprites/hotdog.png" id="5_8jjg6"]
+[ext_resource type="Script" path="res://scripts/hotdog.gd" id="5_ocbe7"]
+[ext_resource type="PackedScene" uid="uid://kw7ooaupc8yu" path="res://scenes/health_ui.tscn" id="6_emj0p"]
+[ext_resource type="Script" path="res://scenes/health_ui.gd" id="7_4v7vq"]
+[ext_resource type="Script" path="res://scenes/enemyspawner.gd" id="8_pt3pg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mb738"]
+radius = 10.5943
+height = 33.7552
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 4)
+scale = Vector2(1.06095, 1.22856)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_hhsmg")]
+
+[node name="HotdogBody" type="CharacterBody2D" parent="." node_paths=PackedStringArray("center")]
+position = Vector2(-50.8976, 7.62939e-06)
+script = ExtResource("5_ocbe7")
+target_node_path = NodePath("../PlayerBody/Player")
+center = NodePath("")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="HotdogBody"]
+
+[node name="Area2D" type="Area2D" parent="HotdogBody"]
+scale = Vector2(1.2669, 1.19656)
+
+[node name="HotdogHitbox" type="CollisionShape2D" parent="HotdogBody/Area2D"]
+position = Vector2(-3.72005, 3.40125)
+rotation = 0.773794
+scale = Vector2(0.750875, 0.94517)
+shape = SubResource("CapsuleShape2D_mb738")
+
+[node name="Hotdog" type="Sprite2D" parent="HotdogBody"]
+texture_filter = 1
+position = Vector2(-0.94273, -7.76254e-06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_8jjg6")
+
+[node name="HotdogHitbox" type="CollisionShape2D" parent="HotdogBody"]
+position = Vector2(-1, 1)
+rotation = 0.773794
+shape = SubResource("CapsuleShape2D_mb738")
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource("8_pt3pg")
+
+[node name="Health UI" parent="." instance=ExtResource("6_emj0p")]
+offset_left = -552.335
+offset_top = -425.702
+offset_right = -512.335
+offset_bottom = -385.702
+script = ExtResource("7_4v7vq")
+
+[connection signal="screen_exited" from="HotdogBody/VisibleOnScreenNotifier2D" to="HotdogBody" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="HotdogBody/Area2D" to="HotdogBody" method="_on_area_2d_body_entered"]

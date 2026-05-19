@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmwccil3rjwdi"]
+
+[ext_resource type="Script" path="res://scripts/playercontrols.gd" id="1_sxi0k"]
+[ext_resource type="Texture2D" uid="uid://lk63evn03cp7" path="res://sprites/player.png" id="2_52jad"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kb724"]
+radius = 15.0
+height = 53.7214
+
+[node name="PlayerBody" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_sxi0k")
+
+[node name="Player" type="Sprite2D" parent="." groups=["player"]]
+texture_filter = 1
+scale = Vector2(1.65625, 1.75)
+texture = ExtResource("2_52jad")
+
+[node name="PlayerHitBox" type="CollisionShape2D" parent="."]
+position = Vector2(1.8851, -0.813961)
+shape = SubResource("CapsuleShape2D_kb724")

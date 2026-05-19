@@ -1,0 +1,173 @@
+[gd_scene load_steps=12 format=3 uid="uid://113bv3djge74"]
+
+[ext_resource type="PackedScene" uid="uid://dmwccil3rjwdi" path="res://scenes/player_body.tscn" id="1_hhsmg"]
+[ext_resource type="Texture2D" uid="uid://bklubfcguc52r" path="res://sprites/hotdog.png" id="5_8jjg6"]
+[ext_resource type="Script" path="res://scripts/hotdog.gd" id="5_ocbe7"]
+[ext_resource type="PackedScene" uid="uid://kw7ooaupc8yu" path="res://scenes/health_ui.tscn" id="6_emj0p"]
+[ext_resource type="Script" path="res://scripts/health_ui.gd" id="7_4v7vq"]
+[ext_resource type="Texture2D" uid="uid://bueuupqfrhdqt" path="res://sprites/grass.png" id="7_kvvf8"]
+[ext_resource type="FontFile" uid="uid://bmriruwp0spst" path="res://misc/pixelart.ttf" id="8_2qgjg"]
+[ext_resource type="Script" path="res://scripts/enemyspawner.gd" id="8_pt3pg"]
+[ext_resource type="Script" path="res://scenes/speed_boost_upgrade_button.gd" id="9_6hx5a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mb738"]
+radius = 10.5943
+height = 33.7552
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_62da3"]
+normal = Vector2(0.0137444, -0.999906)
+distance = 334.048
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 4)
+scale = Vector2(1.06095, 1.22856)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_hhsmg")]
+
+[node name="HotdogBody" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target", "center") groups=["hotdog"]]
+position = Vector2(-50.8976, 7.62939e-06)
+script = ExtResource("5_ocbe7")
+target = NodePath("../PlayerBody")
+target_node_path = NodePath("../PlayerBody")
+center = NodePath("../PlayerBody")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="HotdogBody"]
+
+[node name="Area2D" type="Area2D" parent="HotdogBody"]
+scale = Vector2(1.2669, 1.19656)
+
+[node name="HotdogHitbox" type="CollisionShape2D" parent="HotdogBody/Area2D"]
+position = Vector2(-3.72005, 3.40125)
+rotation = 0.773794
+scale = Vector2(0.750875, 0.94517)
+shape = SubResource("CapsuleShape2D_mb738")
+
+[node name="Hotdog" type="Sprite2D" parent="HotdogBody"]
+texture_filter = 1
+position = Vector2(-0.94273, -7.76254e-06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_8jjg6")
+
+[node name="HotdogHitbox" type="CollisionShape2D" parent="HotdogBody"]
+position = Vector2(-1, 1)
+rotation = 0.773794
+shape = SubResource("CapsuleShape2D_mb738")
+
+[node name="Spawner" type="Node" parent="." groups=["spawner"]]
+script = ExtResource("8_pt3pg")
+
+[node name="Health UI" parent="." instance=ExtResource("6_emj0p")]
+offset_left = -642.82
+offset_top = -729.309
+offset_right = -602.82
+offset_bottom = -689.309
+scale = Vector2(2.57365, 2.50415)
+script = ExtResource("7_4v7vq")
+
+[node name="WorldBoundaries" type="Node2D" parent="."]
+
+[node name="TopStatic" type="StaticBody2D" parent="WorldBoundaries" groups=["wall"]]
+collision_mask = 2
+
+[node name="TopBound" type="CollisionShape2D" parent="WorldBoundaries/TopStatic"]
+position = Vector2(3.77021, -534.772)
+rotation = -3.14159
+scale = Vector2(0.942551, 0.813961)
+shape = SubResource("WorldBoundaryShape2D_62da3")
+one_way_collision_margin = 0.0
+debug_color = Color(0.935809, 0.11016, 0.566745, 0.42)
+
+[node name="BottomStatic" type="StaticBody2D" parent="WorldBoundaries" groups=["wall"]]
+collision_mask = 2
+
+[node name="BottomBound" type="CollisionShape2D" parent="WorldBoundaries/BottomStatic"]
+position = Vector2(-2.82765, 538.028)
+scale = Vector2(0.942551, 0.813961)
+shape = SubResource("WorldBoundaryShape2D_62da3")
+debug_color = Color(0.542918, 0.000984274, 0.675015, 0.42)
+
+[node name="RightStatic" type="StaticBody2D" parent="WorldBoundaries" groups=["wall"]]
+collision_mask = 2
+
+[node name="RightBound" type="CollisionShape2D" parent="WorldBoundaries/RightStatic"]
+position = Vector2(854.894, -0.813961)
+rotation = -1.5708
+scale = Vector2(0.813961, 0.942551)
+shape = SubResource("WorldBoundaryShape2D_62da3")
+debug_color = Color(0.544379, 0.52865, 0.557855, 0.42)
+
+[node name="LeftStatic" type="StaticBody2D" parent="WorldBoundaries" groups=["wall"]]
+collision_mask = 2
+
+[node name="LeftBound" type="CollisionShape2D" parent="WorldBoundaries/LeftStatic"]
+position = Vector2(-854.894, -2.44188)
+rotation = 1.5708
+scale = Vector2(0.813961, 0.942551)
+shape = SubResource("WorldBoundaryShape2D_62da3")
+debug_color = Color(0.800602, 0.420288, 0, 0.42)
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.204365, 0.439428, 0.214572, 1)
+z_index = -5
+position = Vector2(-3.77019, 4.47675)
+scale = Vector2(1.69659, 0.845757)
+texture = ExtResource("7_kvvf8")
+
+[node name="Upgrades UI" type="Control" parent="."]
+visible = false
+modulate = Color(0.898368, 0.858617, 0.810549, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hotdog Size Upgrade Button" type="Button" parent="Upgrades UI"]
+process_mode = 3
+layout_mode = 0
+offset_left = -310.099
+offset_top = -230.351
+offset_right = 249.901
+offset_bottom = -180.351
+scale = Vector2(1.06929, 1.5647)
+theme_override_fonts/font = ExtResource("8_2qgjg")
+text = "BIGGER HOTDOG
+________________________________________
+hotdog projectile grows in size by twenty percent "
+
+[node name="Speed Boost Upgrade Button" type="Button" parent="Upgrades UI"]
+process_mode = 3
+layout_mode = 0
+offset_left = -273.34
+offset_top = -111.513
+offset_right = 226.66
+offset_bottom = -61.5126
+scale = Vector2(1.06929, 1.5647)
+theme_override_fonts/font = ExtResource("8_2qgjg")
+text = "SPEED BOOST
+________________________________________
+player speed increases by ten percent"
+script = ExtResource("9_6hx5a")
+
+[node name="Cooldown Upgrade Button" type="Button" parent="Upgrades UI"]
+process_mode = 3
+layout_mode = 0
+offset_left = -164.947
+offset_top = 32.5584
+offset_right = 194.053
+offset_bottom = 96.5584
+scale = Vector2(0.896397, 1.39227)
+theme_override_fonts/font = ExtResource("8_2qgjg")
+text = "FASTER SHOTS
+_______________________
+
+boss cooldown decreases "
+
+[connection signal="screen_exited" from="HotdogBody/VisibleOnScreenNotifier2D" to="HotdogBody" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="HotdogBody/Area2D" to="HotdogBody" method="_on_area_2d_body_entered"]
+[connection signal="button_down" from="Upgrades UI/Hotdog Size Upgrade Button" to="HotdogBody" method="size_button_down"]
+[connection signal="pressed" from="Upgrades UI/Hotdog Size Upgrade Button" to="HotdogBody" method="_on_hotdog_size_upgrade_button_pressed"]
+[connection signal="button_down" from="Upgrades UI/Speed Boost Upgrade Button" to="PlayerBody" method="on_speed_boost_down"]
+[connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="PlayerBody" method="on_cooldown_down"]
+[connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="HotdogBody" method="_on_cooldown_upgrade_button_button_down"]

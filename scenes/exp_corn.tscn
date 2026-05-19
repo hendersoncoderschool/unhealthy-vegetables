@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cup2iw8p6cvyx"]
+
+[ext_resource type="Script" path="res://scenes/corn_exp.gd" id="1_oleoi"]
+[ext_resource type="Texture2D" uid="uid://ebdpa3r20u56" path="res://sprites/exp_corn.png" id="1_u70xo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfgw1"]
+radius = 42.0595
+
+[node name="exp_corn" type="Node2D"]
+scale = Vector2(0.248652, 0.243793)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_oleoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_vfgw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_u70xo")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="corn_exp_body_entered"]

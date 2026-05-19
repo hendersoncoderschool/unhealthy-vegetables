@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://daouxkt067wsa"]
+
+[ext_resource type="Script" path="res://scenes/broc_exp.gd" id="1_gh5cw"]
+[ext_resource type="Texture2D" uid="uid://b6toah1owyqds" path="res://sprites/exp_broc.png" id="1_su6r4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6mch"]
+radius = 43.2814
+
+[node name="exp_broc" type="Node2D"]
+scale = Vector2(0.323465, 0.274466)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_gh5cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_r6mch")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_su6r4")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="broc_exp_body_entered"]

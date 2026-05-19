@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmswbw4g44g5a"]
+
+[ext_resource type="Texture2D" uid="uid://dp86hfkar46mp" path="res://sprites/fireball.png" id="1_twkds"]
+[ext_resource type="Script" path="res://scenes/fireball.gd" id="1_ykfru"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b1d1r"]
+radius = 10.7057
+
+[node name="Fireball" type="CharacterBody2D" groups=["fireball"]]
+script = ExtResource("1_ykfru")
+
+[node name="Fireball Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-163.061, -4.88377)
+scale = Vector2(-1.14872, 1)
+texture = ExtResource("1_twkds")
+hframes = 2
+
+[node name="Fireball Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-155, -6)
+scale = Vector2(0.971276, 1)
+shape = SubResource("CircleShape2D_b1d1r")
