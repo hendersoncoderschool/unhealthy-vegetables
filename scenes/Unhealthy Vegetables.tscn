@@ -164,6 +164,32 @@ _______________________
 
 boss cooldown decreases "
 
+[node name="Game_Over" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Restart" type="Button" parent="Game_Over"]
+offset_left = -175.315
+offset_top = 4.06981
+offset_right = -107.315
+offset_bottom = 35.0698
+scale = Vector2(5.00262, 5.22585)
+text = "restart?"
+
+[node name="Label" type="Label" parent="Game_Over"]
+modulate = Color(1, 0.152561, 0.0958819, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -408.125
+offset_top = -161.164
+offset_right = -220.125
+offset_bottom = -125.164
+scale = Vector2(4.32851, 4.37015)
+text = "GAME OVER: YOU DIED"
+
 [connection signal="screen_exited" from="HotdogBody/VisibleOnScreenNotifier2D" to="HotdogBody" method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="HotdogBody/Area2D" to="HotdogBody" method="_on_area_2d_body_entered"]
 [connection signal="button_down" from="Upgrades UI/Hotdog Size Upgrade Button" to="HotdogBody" method="size_button_down"]
@@ -171,3 +197,4 @@ boss cooldown decreases "
 [connection signal="button_down" from="Upgrades UI/Speed Boost Upgrade Button" to="PlayerBody" method="on_speed_boost_down"]
 [connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="PlayerBody" method="on_cooldown_down"]
 [connection signal="button_down" from="Upgrades UI/Cooldown Upgrade Button" to="HotdogBody" method="_on_cooldown_upgrade_button_button_down"]
+[connection signal="button_down" from="Game_Over/Restart" to="PlayerBody" method="restart_button_press"]

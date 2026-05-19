@@ -5,3 +5,7 @@ res://scenes/exp_broc.tscn
 res://scenes/exp_corn.tscn
 res://scenes/carrot.tscn
 res://scenes/brocolli_body.tscn
+res://scenes/broc_exp.gd
+res://scenes/carrot_exp.gd
+res://scenes/corn_exp.gd
+res://scripts/playercontrols.gd

@@ -10,7 +10,7 @@ var exp_amount = 0
 @onready var fireballBottom = get_tree().get_first_node_in_group("shooting")
 
 @onready var upgrades = get_node("/root/Node2D/Upgrades UI")
-
+@onready var gameover = get_node("/root/Node2D/Game_Over")
 
 signal healthChanged(newHealth)
 
@@ -25,13 +25,13 @@ func _physics_process(_delta): #update function
 	knockback = knockback.lerp(Vector2.ZERO,0.1)
 	if health <= 0:
 		print("player is dead");
+		gameover.visible = true 
 		queue_free()
 	#add_collision_exception_with(fireballTop)
 	#add_collision_exception_with(fireballBottom)
 	if exp_amount % 15 == 0 and get_tree().paused == false and exp_amount > 0:
 		get_tree().paused = true
 		upgrades.visible = true
-		
 func take_damage(damage, enemyVelocity):
 	if has_Iframes == false:
 		health -= damage
@@ -45,10 +45,12 @@ func reset_health():
 	health = 3
 	emit_signal("healthChanged", health)
 		
-
-
 func on_speed_boost_down() -> void:
 	speed *= 1.15
 	exp_amount -= 5
 	upgrades.visible = false
 	get_tree().paused = false
+
+
+func restart_button_press() -> void:
+	get_tree().reload_current_scene()
